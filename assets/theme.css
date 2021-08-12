@@ -6590,7 +6590,7 @@ hr {
 
 .slideshow__text-wrap--desktop .slideshow__text-content {
   position: absolute;
-  width: 100%;
+  width: 50%;
   top: 50%;
   z-index: 2;
 }
@@ -9205,8 +9205,18 @@ hr {
 }
 
 .besame-sub-title {
-  font-family: 'Nunito', sans-serif !important;
+  font-family: "Nunito", sans-serif !important;
 }
 .top-nav-font-size {
   font-size: 1.5rem !important;
+}
+
+.site-header__icon_search_holder {
+  position: absolute;
+  left: -350px;
+}
+
+.search-rounded {
+  width: 100%;
+  border-radius: 15px !important;
 }
