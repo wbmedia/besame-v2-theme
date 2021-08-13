@@ -192,11 +192,17 @@
             {% if section.settings.show_quantity_selector %}
               <div class="product-form__controls-group">
                 <div class="product-form__item">
-                  <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
-                  <input type="number" id="Quantity-{{ section.id }}"
-                    name="quantity" value="1" min="1" pattern="[0-9]*"
-                    class="product-form__input product-form__input--quantity" data-quantity-input
-                  >
+                  <div class="qtydiv">
+                    <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
+                    <div class="qtybox">
+                      <span class="btnqty qtyminus icon icon-minus">-</span>
+                      <input type="number" id="Quantity-{{ section.id }}"
+                        name="quantity" value="1" min="1" pattern="[0-9]*"
+                        class="quantity-selector quantity-input" data-quantity-input
+                      >
+                      <span class="btnqty qtyplus icon icon-plus">+</span>
+                    </div>
+                </div>
                 </div>
               </div>
             {% endif %}

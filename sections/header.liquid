@@ -54,7 +54,8 @@
     {% endif %}
   {% endif %}
 
-  <header class="site-header{% if section.settings.align_logo == 'left' %} border-bottom logo--left{% else %} logo--center{% endif %}" role="banner">
+  <header>
+  <div class="site-header{% if section.settings.align_logo == 'left' %} border-bottom logo--left{% else %} logo--center{% endif %}" role="banner">
     <div class="grid grid--no-gutters grid--table site-header__mobile-nav">
       
       {% if section.settings.align_logo == 'center' %}
@@ -216,40 +217,40 @@
       </div>
     </div>
     <nav class="vertical-align-middle scroll hide-desktop">
-      <span class="nav-item">
+      <span class="nav-item mobile-link">
         <a href="">New</a>
       </span>
-      <span class="nav-item">
+      <span class="nav-item mobile-link">
         <a href="">Lips</a>
       </span>
-      <span class="nav-item">
+      <span class="nav-item mobile-link">
         <a href="">Face</a>
       </span>
-      <span class="nav-item">
+      <span class="nav-item mobile-link">
         <a href="">Collection & More</a>
       </span>
-      <span class="nav-item">
+      <span class="nav-item mobile-link">
         <a href="">Discover</a>
       </span>
-      <span class="nav-item">
+      <span class="nav-item mobile-link">
         <a href="">Blog</a>
       </span>
-      
     </nav>
     <nav class="fixed-bottom hide-desktop">
       <span class="nav-item-bottom">
         <a href="/"><?xml version="1.0" encoding="utf-8"?>
-          <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="48"><path d="M0 0h48v48H0z" fill="none"/>
+          <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
           <g id="Shopicon">
             <path d="M4,20h4v24h10h12h10V20h4L24,4L4,20z M20,42V26h8v16H20z M38,18v24h-8V24H18v18h-8V18H9.702L24,6.561L38.298,18H38z"/>
           </g>
           </svg>
           </a>
+          <small class="text-span-bottom">Home</small>
       </span>
       <span class="nav-item-bottom">
         <a href="">
           <?xml version="1.0" encoding="utf-8"?>
-          <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="48"><path d="M0 0h48v48H0z" fill="none"/>
+          <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
           <g id="Shopicon">
             <path d="M4,40c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4l0-26h-9.191C33.865,8.888,29.382,5,24,5s-9.865,3.888-10.809,9H4L4,40z M24,7
               c4.275,0,7.855,2.998,8.768,7H15.232C16.145,9.998,19.725,7,24,7z M13,16v6h2v-6h18v6h2v-6h7l0,24c0,1.103-0.897,2-2,2H8
@@ -257,11 +258,12 @@
           </g>
           </svg>         
         </a>
+        <small class="text-span-bottom">Shop</small>
       </span>
       <span class="nav-item-bottom">
         <a href="">
         <?xml version="1.0" encoding="utf-8"?>
-          <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="48"><path d="M0 0h48v48H0z" fill="none"/>
+          <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
           <g id="Shopicon">
             <path d="M30.18,17.167L24,4l-6.18,13.167L4,19.279l10,10.249L11.639,44L24,37.167L36.361,44L34,29.528l10-10.249L30.18,17.167z
                 M32.026,29.85l1.698,10.407l-8.756-4.84L24,34.882l-0.968,0.535l-8.756,4.84l1.698-10.407l0.162-0.996l-0.705-0.722L8.15,20.668
@@ -270,11 +272,12 @@
           </g>
           </svg>
         </a>
+        <small class="text-span-bottom">Discover</small>
       </span>
       <span class="nav-item-bottom">
         <a href="">
         <?xml version="1.0" encoding="utf-8"?>
-          <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="48"><path d="M0 0h48v48H0z" fill="none"/>
+          <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
           <g id="Shopicon">
             <path d="M29.089,24.747C32.6,22.909,35,19.238,35,15c0-6.075-4.925-11-11-11S13,8.925,13,15c0,4.238,2.4,7.909,5.911,9.747
               C10.89,27.09,5,34.809,5,44h38C43,34.809,37.11,27.09,29.089,24.747z M15,15c0-4.963,4.037-9,9-9s9,4.037,9,9c0,4.963-4.037,9-9,9
@@ -282,11 +285,12 @@
           </g>
           </svg>
         </a>
+        <small class="text-span-bottom">Me</small>
       </span>
       <span class="nav-item-bottom">
         <a href="">
           <?xml version="1.0" encoding="utf-8"?>
-          <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="48"><path d="M0 0h48v48H0z" fill="none"/>
+          <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
           <g id="Shopicon">
             <path d="M24,6.413C22.775,4.373,20.548,3,18,3H4v35h14c2.757,0,5,2.243,5,5v1h2v-1c0-2.757,2.243-5,5-5h14V3H30
               C27.452,3,25.225,4.373,24,6.413z M18,36H6V5h12c2.757,0,5,2.243,5,5v28v0.111C21.728,36.81,19.958,36,18,36z M42,36H30
@@ -294,9 +298,11 @@
           </g>
           </svg>
         </a>
+        <small class="text-span-bottom">Blogs</small>
       </span>
-      <span class="nav-item-bottom">
-        <a href="">My Cart
+      
+      <!-- <span class="nav-item-bottom">
+        <a href="">
         <?xml version="1.0" encoding="utf-8"?>
           <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="48"><path d="M0 0h48v48H0z" fill="none"/>
           <g id="Shopicon">
@@ -306,7 +312,8 @@
           </g>
           </svg>            
         </a>
-      </span>
+        <small>My Cart</small>
+      </span> -->
     </nav>
 
     <nav class="mobile-nav-wrapper medium-up--hide critical-hidden" role="navigation">
@@ -403,8 +410,8 @@
         {% endfor %}
       </ul>
     </nav>
-  </header>
-
+  </div>
+</header>
   {% if section.settings.align_logo == 'center' %}
   <nav class="small--hide border-bottom navigation-top" id="AccessibleNav" role="navigation">
     {% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
