@@ -42,13 +42,24 @@
     <img class="grid-view-item__image" src="{{ preview_image | img_url: image_size, scale: 2 }}" alt="{{ preview_image.alt }}" style="max-width: {{ max_height | times: preview_image.aspect_ratio }}px;">
   </noscript>
 
+  {% for opt in product.options_with_values %}
+	{% assign opt_l = opt.name | downcase %}
+	{% if opt_l == "color" or opt_l == "colour" %}
+	      {% for val in opt.values %}
+	          <span class="color-swatch" 
+	                style="background-image:url({{val | append: ".jpg"}} | asset_img_url: "32x" );
+	                background-color: {{ val| split:" " | last }};"
+	                >{{val}}<span>
+	      {% endfor %}
+	{% endif }
+{% endfor %}
   <div class="h4 grid-view-item__title product-card__title" aria-hidden="true">{{ product.title }}</div>
 
   {% include 'product-price-listing', product: product, show_vendor: show_vendor %}
   <form method="post" action="/cart/add">
-  <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-  <input style="visibility: hidden;" min="1" type="number" id="quantity" name="quantity" value="1"/>
-  <input style="width: 100%;" type="submit" value="Add to cart" class="btn" />
-</form>
+    <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+    <input style="visibility: hidden;" min="1" type="number" id="quantity" name="quantity" value="1"/>
+    <input style="width: 100%;" type="submit" value="Add to cart" class="btn" />
+  </form>
 
 </div>

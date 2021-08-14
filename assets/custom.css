@@ -1,0 +1,15 @@
+header.sticky {
+  background-color: white;
+  padding: 5px 100px;
+  position: fixed;
+}
+
+.custom-header {
+  background-color: white;
+  display: flex;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+}

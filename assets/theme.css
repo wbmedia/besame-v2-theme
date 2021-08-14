@@ -45,15 +45,21 @@
     - Do not change the variable names
     - Breakpoint pixel values are used in the window.theme.breakpoints object
 ==============================================================================*/
+
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://use.typekit.net/gfp5rww.css");
+@import url("https://use.typekit.net/nfo3xxj.css");
+@import url("https://p.typekit.net/p.css?s=1&k=nfo3xxj&ht=tk&f=32494&a=82895983&app=typekit&e=css");
+
 :root {
   --black: #000000;
   --white: #ffffff;
 }
 body {
-  font-family: "Jost", sans-serif;
+  font-family: "gill-sans-nova";
   font-size: 14px;
   font-weight: 400;
 }
@@ -353,6 +359,9 @@ a {
   background-color: transparent;
 }
 
+a:hover {
+  text-decoration: none !important;
+}
 b,
 strong {
   font-weight: var(--font-weight-body--bolder);
@@ -3141,7 +3150,7 @@ hr {
 .list-view-item__price-column .price__regular,
 .list-view-item__price-column .price__sale {
   flex-basis: 100%;
-  justify-content: flex-end;
+  text-align: center;
   margin-right: 0;
 }
 
@@ -3625,6 +3634,10 @@ hr {
 
 .product-single__title {
   margin-bottom: 0.5rem;
+  text-transform: uppercase !important;
+  font-family: "meno-banner-extra-condensed";
+  font-weight: 700;
+  font-size: 3rem !important;
 }
 
 .product__price,
@@ -3746,7 +3759,7 @@ hr {
 }
 
 .product-form__input--quantity {
-  max-width: 5rem;
+  max-width: 100%;
 }
 
 .product-form__error-message-wrapper {
@@ -3847,6 +3860,14 @@ hr {
 
 .product-single__description {
   margin-top: 30px;
+}
+
+.product-single__description h4 {
+  border-bottom: 1px solid #acacac;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "gill-sans-nova" !important;
 }
 
 .product__quantity-error .icon {
@@ -6741,7 +6762,7 @@ hr {
   height: 44px;
   padding: 5px;
   background-clip: content-box;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: transparent;
   color: rgba(255, 255, 255, 0.5);
   transition: color 0.2s cubic-bezier(0.44, 0.13, 0.48, 0.87),
     background-color 0.2s cubic-bezier(0.44, 0.13, 0.48, 0.87);
@@ -7408,11 +7429,22 @@ hr {
 }
 .site-footer__item-inner--newsletter .newsletter__submit {
   margin-top: 5px;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  text-transform: capitalize;
 }
 .site-footer__item-inner--newsletter .newsletter__input {
   margin: 5px 0 0 0;
   width: 100%;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
 }
+.site-footer__item-inner--newsletter .newsletter__input:hover {
+  background-color: black;
+}
+
 @media only screen and (min-width: 750px) {
   .site-footer__item--full-width .site-footer__item-inner--newsletter {
     max-width: 50%;
@@ -7497,6 +7529,7 @@ hr {
   font-size: calc(
     ((var(--font-size-base) - 3) / (var(--font-size-base))) * 1em
   );
+  text-transform: uppercase !important;
 }
 
 .site-footer__payment-icons .payment-icon {
@@ -8471,10 +8504,11 @@ hr {
 
 .product-card__title {
   border-bottom: 1px solid transparent;
-  display: inline;
+  text-align: center;
   font-family: var(--font-stack-header);
   font-style: var(--font-style-header);
   font-weight: var(--font-weight-header);
+  text-decoration: none;
 }
 
 [data-section-type="video-section"] {
@@ -9150,6 +9184,7 @@ hr {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
+  padding: 1px;
 }
 
 .scroll::-webkit-scrollbar {
@@ -9157,7 +9192,7 @@ hr {
 }
 
 .nav-item {
-  padding: 12px 16px 13px;
+  padding: 10px 6px;
 }
 
 .nav-item-bottom {
@@ -9219,4 +9254,101 @@ hr {
 .search-rounded {
   width: 100%;
   border-radius: 15px !important;
+}
+
+.mobile-link a {
+  border: 1px solid #acacac !important;
+  border-radius: 7px !important;
+  padding: 1px 5px;
+}
+
+small.text-span-bottom {
+  position: relative !important;
+  top: 10px !important;
+  left: -40px !important;
+}
+
+.qtydiv label {
+  display: block;
+  margin-bottom: 12px;
+  letter-spacing: 2.8px;
+  color: #747a7b;
+}
+.qtydiv .btnqty {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  font-size: 25px;
+  padding: 5px;
+  line-height: 5px;
+}
+.qtydiv .btnqty.qtyminus {
+  margin-right: 8px;
+  float: left;
+  top: 10px;
+  position: relative;
+}
+.qtydiv .btnqty.qtyplus {
+  margin-left: 8px;
+  float: right;
+  top: 10px;
+  position: relative;
+}
+.qtydiv .quantity-input {
+  border: none;
+  border: none;
+  padding: 8px;
+  text-align: center;
+  width: 50px;
+  outline: none;
+  display: inline-block;
+}
+.qtydiv {
+  display: inline-block;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.qtybox {
+  border: 1px solid #dedede;
+  text-align: center;
+}
+
+/* -------- ACCORDION --------*/
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.accordion:after {
+  content: "\002B";
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.active,
+.accordion:hover {
+  background-color: #ccc;
+}
+
+.panel p {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }

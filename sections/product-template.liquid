@@ -192,11 +192,17 @@
             {% if section.settings.show_quantity_selector %}
               <div class="product-form__controls-group">
                 <div class="product-form__item">
-                  <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
-                  <input type="number" id="Quantity-{{ section.id }}"
-                    name="quantity" value="1" min="1" pattern="[0-9]*"
-                    class="product-form__input product-form__input--quantity" data-quantity-input
-                  >
+                  <div class="qtydiv">
+                    <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
+                    <div class="qtybox">
+                      <span id="decrement" class="btnqty qtyminus icon icon-minus">-</span>
+                      <input type="number" id="Quantity-{{ section.id }}"
+                        name="quantity" value="1" min="1" pattern="[0-9]*"
+                        class="quantity-selector quantity-input" data-quantity-input
+                      >
+                      <span id="increment" class="btnqty qtyplus icon icon-plus">+</span>
+                    </div>
+                </div>
                 </div>
               </div>
             {% endif %}
@@ -232,9 +238,9 @@
                     {% include 'icon-spinner' %}
                   </span>
                 </button>
-                {% if section.settings.enable_payment_button %}
+                <!-- {% if section.settings.enable_payment_button %}
                   {{ form | payment_button }}
-                {% endif %}
+                {% endif %} -->
               </div>
             </div>
           {% endform %}
@@ -267,14 +273,13 @@
         >
         </div>
 
-        <div class="product-single__description rte">
-          {{ product.description }}
+        <div class="product-single__description">
+          <button class="accordion">Section 1</button>
+          <div class="panel">{{ product.description }}</div>      
+          {% if section.settings.show_share_buttons %}
+            {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}
+          {% endif %}
         </div>
-
-        {% if section.settings.show_share_buttons %}
-          {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}
-        {% endif %}
-    </div>
   </div>
 </div>
 
@@ -284,6 +289,41 @@
   </script>
   <script type="application/json" id="ModelJson-{{ section.id }}">
     {{ product.media | where: 'media_type', 'model' | json }}
+  </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script> 
+  <script> $('.qtybox .btnqty').on('click', function(){ 
+    var qty = parseInt($(this).parent('.qtybox').find('.quantity-input').val());
+     if($(this).hasClass('qtyplus')) { 
+       qty++; }else { if(qty > 1) { qty--; } } qty = (isNaN(qty))?1:qty; 
+       $(this).parent('.qtybox').find('.quantity-input').val(qty); }); 
+  </script>
+  <script>
+    $(function() {
+	var Accordion = function(el, multiple) {
+		this.el = el || {};
+		this.multiple = multiple || false;
+
+		// Variables privadas
+		var links = this.el.find('.link');
+		// Evento
+		links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+	}
+
+	Accordion.prototype.dropdown = function(e) {
+		var $el = e.data.el;
+			$this = $(this),
+			$next = $this.next();
+
+		$next.slideToggle();
+		$this.parent().toggleClass('open');
+
+		if (!e.data.multiple) {
+			$el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+		};
+	}	
+
+	var accordion = new Accordion($('#accordion'), false);
+});
   </script>
 {% endunless %}
 
