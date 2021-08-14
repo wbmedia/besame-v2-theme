@@ -3,15 +3,17 @@ window.addEventListener("scroll", function () {
   header.classList.toggle("sticky", window.scrollY > 0);
 });
 
-$(".qtybox .btnqty").on("click", function () {
-  var qty = parseInt($(this).parent(".qtybox").find(".quantity-input").val());
-  if ($(this).hasClass("qtyplus")) {
-    qty++;
-  } else {
-    if (qty > 1) {
-      qty--;
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
     }
-  }
-  qty = isNaN(qty) ? 1 : qty;
-  $(this).parent(".qtybox").find(".quantity-input").val(qty);
-});
+  });
+}
