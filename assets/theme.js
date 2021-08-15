@@ -746,6 +746,7 @@ slate.Variants = (function () {
      * Event handler for when a variant input changes.
      */
     _onSelectChange: function () {
+      console.log("event change");
       var variant = this._getVariantFromOptions();
 
       this.container.dispatchEvent(

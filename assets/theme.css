@@ -9316,20 +9316,22 @@ small.text-span-bottom {
 
 /* -------- ACCORDION --------*/
 .accordion {
-  background-color: #eee;
-  color: #444;
+  background-color: transparent;
+  color: #000;
   cursor: pointer;
   padding: 18px;
   width: 100%;
   border: none;
   text-align: left;
   outline: none;
-  font-size: 15px;
+  font-size: 20px;
   transition: 0.4s;
+  position: relative;
+  top: 36px;
 }
 
 .accordion:after {
-  content: "\002B";
+  content: "\203A";
   color: #777;
   font-weight: bold;
   float: right;
@@ -9342,7 +9344,7 @@ small.text-span-bottom {
 
 .active,
 .accordion:hover {
-  background-color: #ccc;
+  background-color: transparent;
 }
 
 .panel p {
@@ -9351,4 +9353,35 @@ small.text-span-bottom {
   background-color: white;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+}
+
+/*
+  Variant Swatches
+*/
+
+.variant-swatches {
+  display: flex;
+  justify-content: space-between;
+}
+
+.variant-swatches input {
+  display: none;
+}
+
+.variant-swatches label {
+  max-height: 44px;
+  margin-right: 5%;
+}
+
+.variant-swatches label:last-child {
+  margin-right: 0%;
+}
+
+.variant-swatches img {
+  height: 100%;
+  width: 100%;
+}
+
+.variant-swatches input:checked + label {
+  border: 2px solid black;
 }
