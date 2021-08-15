@@ -283,11 +283,17 @@
           data-has-only-default-variant="{{ product.has_only_default_variant }}"
           data-base-url="{{ shop.url }}{{ routes.root_url }}"
         >
+        {{ discount_application.title }}
         </div>
 
         <div class="product-single__description">
-          <button class="accordion"></button>
-          <div class="panel">{{ product.description }}</div>      
+          <div class="product-badge-continer">
+            {% for tag in product.tags %}
+              <span class="product-badge">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {{ product.description }}
+          
           {% if section.settings.show_share_buttons %}
             {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}
           {% endif %}
@@ -310,31 +316,25 @@
        $(this).parent('.qtybox').find('.quantity-input').val(qty); }); 
   </script>
   <script>
-    $(function() {
-	var Accordion = function(el, multiple) {
-		this.el = el || {};
-		this.multiple = multiple || false;
+    $(function () {
+  // (Optional) Active an item if it has the class "is-active"
+  $(".accordion > .accordion-item.is-active")
+    .children(".accordion-panel")
+    .slideDown();
 
-		// Variables privadas
-		var links = this.el.find('.link');
-		// Evento
-		links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
-	}
-
-	Accordion.prototype.dropdown = function(e) {
-		var $el = e.data.el;
-			$this = $(this),
-			$next = $this.next();
-
-		$next.slideToggle();
-		$this.parent().toggleClass('open');
-
-		if (!e.data.multiple) {
-			$el.find('.submenu').not($next).slideUp().parent().removeClass('open');
-		};
-	}	
-
-	var accordion = new Accordion($('#accordion'), false);
+  $(".accordion > .accordion-item").click(function () {
+    // Cancel the siblings
+    $(this)
+      .siblings(".accordion-item")
+      .removeClass("is-active")
+      .children(".accordion-panel")
+      .slideUp();
+    // Toggle the item
+    $(this)
+      .toggleClass("is-active")
+      .children(".accordion-panel")
+      .slideToggle("ease-out");
+  });
 });
   </script>
 {% endunless %}

@@ -9251,6 +9251,14 @@ hr {
   left: -350px;
 }
 
+@media only screen and (max-width: 750px) {
+  .site-header__icon_search_holder {
+    position: absolute;
+    left: 148px;
+    top: 13px;
+  }
+}
+
 .search-rounded {
   width: 100%;
   border-radius: 15px !important;
@@ -9315,44 +9323,44 @@ small.text-span-bottom {
 }
 
 /* -------- ACCORDION --------*/
+
 .accordion {
-  background-color: transparent;
-  color: #000;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+.accordion-item {
+  padding: auto;
+}
+/* Thumb */
+.accordion-thumb {
+  margin: 0;
+  padding: 0.8rem 0;
   cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 20px;
-  transition: 0.4s;
-  position: relative;
-  top: 36px;
+  font-weight: normal;
 }
-
-.accordion:after {
-  content: "\203A";
-  color: #777;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
+.accordion-thumb::before {
+  content: "";
+  display: inline-block;
+  height: 7px;
+  width: 7px;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease-out;
 }
-
-.active:after {
-  content: "\2212";
-}
-
-.active,
-.accordion:hover {
-  background-color: transparent;
-}
-
-.panel p {
-  padding: 0 18px;
+/* Panel */
+.accordion-panel {
+  margin: 0;
+  padding-bottom: 0.8rem;
   display: none;
-  background-color: white;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
+}
+/* Active */
+.accordion-item.is-active .accordion-thumb::before {
+  transform: rotate(45deg);
 }
 
 /*
@@ -9384,4 +9392,14 @@ small.text-span-bottom {
 
 .variant-swatches input:checked + label {
   border: 2px solid black;
+}
+
+.product-badge-continer {
+  margin-bottom: 10px;
+}
+.product-badge {
+  background-color: #000;
+  color: white;
+  border-radius: 0;
+  padding: 3px 10px;
 }
