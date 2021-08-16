@@ -1455,6 +1455,14 @@ textarea {
 .section-header {
   margin-bottom: 35px;
 }
+
+.section-header h2 {
+  font-family: "meno-banner-extra-condensed";
+  font-size: 2.2rem;
+  max-width: 250px;
+  word-wrap: break-word;
+}
+
 @media only screen and (min-width: 750px) {
   .section-header {
     margin-bottom: 55px;
@@ -8468,6 +8476,13 @@ hr {
   padding-top: 55px;
 }
 
+.newsletter-section-inner {
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: 22rem;
+  grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+}
+
 .index-section--newsletter-background {
   background-color: var(--color-bg-alt);
 }
@@ -9424,4 +9439,19 @@ small.text-span-bottom {
 .cart_mobile {
   position: relative;
   right: 10px;
+}
+
+.align-desktop {
+  float: right;
+  position: relative;
+  bottom: 100px;
+  border-left: 1px solid black;
+  height: 5vh;
+  width: 300px;
+  word-wrap:break-word;
+}
+
+.align-desktop p {
+  padding-left: 19px;
+  text-align: left;
 }
