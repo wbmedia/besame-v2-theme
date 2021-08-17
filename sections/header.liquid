@@ -65,28 +65,11 @@
       {% endif %}
       <div class="grid__item {{ logo_classes }}">
         <div class="site-header__icon_search_holder">
-          <form action="/search" method="get" role="search">
-            <button class="search-bar__submit search-form__submit" type="submit" data-search-form-submit="">
-              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 37 40"><path d="M35.6 36l-9.8-9.8c4.1-5.4 3.6-13.2-1.3-18.1-5.4-5.4-14.2-5.4-19.7 0-5.4 5.4-5.4 14.2 0 19.7 2.6 2.6 6.1 4.1 9.8 4.1 3 0 5.9-1 8.3-2.8l9.8 9.8c.4.4.9.6 1.4.6s1-.2 1.4-.6c.9-.9.9-2.1.1-2.9zm-20.9-8.2c-2.6 0-5.1-1-7-2.9-3.9-3.9-3.9-10.1 0-14C9.6 9 12.2 8 14.7 8s5.1 1 7 2.9c3.9 3.9 3.9 10.1 0 14-1.9 1.9-4.4 2.9-7 2.9z"></path></svg>
-              <span class="icon__fallback-text">Submit</span>
-            </button>
-            <input type="text" placeholder="Search">
-          </form>
-          <!-- <button type="button" class="btn--link site-header__icon site-header__search-toggle js-drawer-open-top" data-predictive-search-open-drawer>
+          
+          <button type="button" class="btn--link site-header__icon site-header__search-toggle js-drawer-open-top" data-predictive-search-open-drawer>
             {% include 'icon-search' %}
             <span class="icon__fallback-text">{{ 'layout.navigation.search' | t }}</span>
-          </button> -->
-          <!-- <form class="search-form search-bar__form" action="/search" method="get" role="search">
-            <div class="search-form__input-wrapper">
-              <button class="search-bar__submit search-form__submit" type="submit" data-search-form-submit="">
-                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 37 40"><path d="M35.6 36l-9.8-9.8c4.1-5.4 3.6-13.2-1.3-18.1-5.4-5.4-14.2-5.4-19.7 0-5.4 5.4-5.4 14.2 0 19.7 2.6 2.6 6.1 4.1 9.8 4.1 3 0 5.9-1 8.3-2.8l9.8 9.8c.4.4.9.6 1.4.6s1-.2 1.4-.6c.9-.9.9-2.1.1-2.9zm-20.9-8.2c-2.6 0-5.1-1-7-2.9-3.9-3.9-3.9-10.1 0-14C9.6 9 12.2 8 14.7 8s5.1 1 7 2.9c3.9 3.9 3.9 10.1 0 14-1.9 1.9-4.4 2.9-7 2.9z"></path></svg>
-                <span class="icon__fallback-text">Submit</span>
-              </button>
-              <input type="text" name="q" placeholder="Search" role="combobox" aria-autocomplete="list" aria-owns="predictive-search-results" aria-expanded="false" aria-label="Search" aria-haspopup="listbox" class="search-form__input search-bar__input search-rounded" data-predictive-search-drawer-input="" data-base-url="/search" autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false" aria-activedescendant="">
-              <input type="hidden" name="options[prefix]" value="last" aria-hidden="true">
-              <div class="predictive-search-wrapper predictive-search-wrapper--drawer" data-predictive-search-mount="drawer" style=""><div class="predictive-search"><div class="predictive-search-title"><h3 id="predictive-search" class="predictive-search-title__content">Products</h3><span class="predictive-search-title__loading-spinner"></span></div><ul id="predictive-search-results" class="predictive-search__list" role="listbox" aria-labelledby="predictive-search"><li id="search-result-0" class="predictive-search-item" role="option" data-search-result=""><a class="predictive-search-item__link" href="/products/lip-product?_pos=1&amp;_psq=lip&amp;_ss=e&amp;_v=1.0" tabindex="-1"><div class="predictive-search__column predictive-search__column--image" data-image-loading-animation=""><img class="predictive-search-item__image lazyload" src="//cdn.shopify.com/s/files/1/0169/5435/9872/products/Xg40D6xsxTKDfGmiPGbmXLI5tdZCEhXp-24_100x.jpg?v=1570174854" data-src="//cdn.shopify.com/s/files/1/0169/5435/9872/products/Xg40D6xsxTKDfGmiPGbmXLI5tdZCEhXp-24_100x.jpg?v=1570174854" data-image="" alt="Travel Lip Brush"></div><div class="predictive-search__column predictive-search__column--content predictive-search__column--center"><span class="predictive-search-item__title"><span class="predictive-search-item__title-text">Travel Lip Brush</span></span><span class="visually-hidden">, </span><span class="visually-hidden">1 of 4</span></div></a></li><li id="search-result-1" class="predictive-search-item" role="option" data-search-result=""><a class="predictive-search-item__link" href="/products/double-sided-lip-brush?_pos=2&amp;_psq=lip&amp;_ss=e&amp;_v=1.0" tabindex="-1"><div class="predictive-search__column predictive-search__column--image" data-image-loading-animation=""><img class="predictive-search-item__image lazyload" src="//cdn.shopify.com/s/files/1/0169/5435/9872/products/HAwQIAFHGbQkDOiELSzYpCMB6mduk1C5-24_100x.jpg?v=1570174847" data-src="//cdn.shopify.com/s/files/1/0169/5435/9872/products/HAwQIAFHGbQkDOiELSzYpCMB6mduk1C5-24_100x.jpg?v=1570174847" data-image="" alt="Double Sided Lip Brush"></div><div class="predictive-search__column predictive-search__column--content predictive-search__column--center"><span class="predictive-search-item__title"><span class="predictive-search-item__title-text">Double Sided Lip Brush</span></span><span class="visually-hidden">, </span><span class="visually-hidden">2 of 4</span></div></a></li><li id="search-result-2" class="predictive-search-item" role="option" data-search-result=""><a class="predictive-search-item__link" href="/products/copy-of-retractable-travel-lip-brush-limited-production-product?_pos=3&amp;_psq=lip&amp;_ss=e&amp;_v=1.0" tabindex="-1"><div class="predictive-search__column predictive-search__column--image" data-image-loading-animation=""><img class="predictive-search-item__image lazyload" src="//cdn.shopify.com/s/files/1/0169/5435/9872/products/TBenTWoang0XHUlmiOB9xDs0KXRSuf5k-24_100x.jpg?v=1570174845" data-src="//cdn.shopify.com/s/files/1/0169/5435/9872/products/TBenTWoang0XHUlmiOB9xDs0KXRSuf5k-24_100x.jpg?v=1570174845" data-image="" alt="Retractable Travel Lip Brush"></div><div class="predictive-search__column predictive-search__column--content predictive-search__column--center"><span class="predictive-search-item__title"><span class="predictive-search-item__title-text">Retractable Travel Lip Brush</span></span><span class="visually-hidden">, </span><span class="visually-hidden">3 of 4</span></div></a></li><li id="search-result-3" class="predictive-search-item" role="option" data-search-result=""><a class="predictive-search-item__link" href="/products/mermaid-kiss-lipstick?_pos=4&amp;_psq=lip&amp;_ss=e&amp;_v=1.0" tabindex="-1"><div class="predictive-search__column predictive-search__column--image" data-image-loading-animation=""><img class="predictive-search-item__image lazyload" src="//cdn.shopify.com/s/files/1/0169/5435/9872/products/iGEztemrtfQwsQMrMwfr3xRrJasysNym-24_100x.jpg?v=1570174855" data-src="//cdn.shopify.com/s/files/1/0169/5435/9872/products/iGEztemrtfQwsQMrMwfr3xRrJasysNym-24_100x.jpg?v=1570174855" data-image="" alt="Mermaid Kiss Lipstick"></div><div class="predictive-search__column predictive-search__column--content predictive-search__column--center"><span class="predictive-search-item__title"><span class="predictive-search-item__title-text">Mermaid Kiss Lipstick</span></span><span class="visually-hidden">, </span><span class="visually-hidden">4 of 4</span></div></a></li><li id="search-all" class="predictive-search-view-all" role="option" data-search-result=""><button type="submit" class="predictive-search-view-all__button" tabindex="-1">Search for<span class="predictive-search-view-all__query"> “lip”</span></button></li></ul></div></div>
-            <div style="position: absolute !important; overflow: hidden; clip: rect(0 0 0 0); height: 1px; width: 1px; margin: -1px; padding: 0; border: 0;" data-search-announcer="" aria-live="polite" aria-atomic="true">4 results found&nbsp;</div></div>
-          </form> -->
+          </button>
         </div>
         {% comment %}
           Use the uploaded logo from theme settings if enabled.
@@ -125,8 +108,35 @@
         {% else %}
           </div>
         {% endif %}
+       
       </div>
 
+      <div class="wishlist hide-desktop">
+        <a href="{{ routes.account_url }}">
+          <span>
+            <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
+              <g id="Shopicon">
+                <path d="M8.444,27L24,42l15.556-15c2.7-2.033,4.444-5.256,4.444-8.889C44,11.978,39.022,7,32.889,7
+                  C29.256,7,26.022,8.756,24,11.456C21.978,8.756,18.744,7,15.111,7C8.978,7,4,11.978,4,18.111C4,21.744,5.744,24.967,8.444,27z
+                   M15.111,9c2.85,0,5.574,1.366,7.288,3.654L24,14.792l1.601-2.137C27.315,10.366,30.039,9,32.889,9C37.913,9,42,13.087,42,18.111
+                  c0,2.888-1.329,5.546-3.648,7.291l-0.097,0.073l-0.088,0.085L24,39.222L9.833,25.56l-0.088-0.085l-0.097-0.073
+                  C7.33,23.657,6,20.999,6,18.111C6,13.087,10.087,9,15.111,9z"/>
+              </g>
+              </svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="cart_mobile hide-desktop">
+        <a href="#" class="site-header__icon site-header__cart" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false">
+          {% include 'icon-cart' %} 
+          <span class="icon__fallback-text"> {{ 'layout.cart.title' | t }}</span>
+          <div id="CartCount" class="site-header__cart-count{% if cart.item_count == 0 %} hide{% endif %} critical-hidden" data-cart-count-bubble>
+            <span data-cart-count>{{ cart.item_count }}</span>
+            <span class="icon__fallback-text medium-up--hide">{{ 'layout.cart.items_count' | t: count: cart.item_count }}</span>
+          </div>
+        </a>
+      </div>
       {% if section.settings.align_logo == 'left' %}
         <nav class="grid__item medium-up--one-half small--hide" id="AccessibleNav" role="navigation">
           {% include 'site-nav', linklist: section.settings.main_linklist %}
@@ -174,17 +184,16 @@
           </a>
           <a href="{{ routes.account_url }}">
             <span>
-              <?xml version="1.0" encoding="utf-8"?>
-              <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
+              <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
                 <g id="Shopicon">
-                  <path d="M30.18,17.167L24,4l-6.18,13.167L4,19.279l10,10.249L11.639,44L24,37.167L36.361,44L34,29.528l10-10.249L30.18,17.167z
-                     M32.026,29.85l1.698,10.407l-8.756-4.84L24,34.882l-0.968,0.535l-8.756,4.84l1.698-10.407l0.162-0.996l-0.705-0.722L8.15,20.668
-                    l9.972-1.524l1.055-0.161l0.453-0.966L24,8.707l4.37,9.31l0.453,0.966l1.055,0.161l9.972,1.524l-7.282,7.463l-0.705,0.722
-                    L32.026,29.85z"/>
+                  <path d="M8.444,27L24,42l15.556-15c2.7-2.033,4.444-5.256,4.444-8.889C44,11.978,39.022,7,32.889,7
+                    C29.256,7,26.022,8.756,24,11.456C21.978,8.756,18.744,7,15.111,7C8.978,7,4,11.978,4,18.111C4,21.744,5.744,24.967,8.444,27z
+                     M15.111,9c2.85,0,5.574,1.366,7.288,3.654L24,14.792l1.601-2.137C27.315,10.366,30.039,9,32.889,9C37.913,9,42,13.087,42,18.111
+                    c0,2.888-1.329,5.546-3.648,7.291l-0.097,0.073l-0.088,0.085L24,39.222L9.833,25.56l-0.088-0.085l-0.097-0.073
+                    C7.33,23.657,6,20.999,6,18.111C6,13.087,10.087,9,15.111,9z"/>
                 </g>
                 </svg>
-                
-              My Favorites
+                My Favorites
             </span>
           </a>        
           <a href="#" class="site-header__icon site-header__cart" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false">
