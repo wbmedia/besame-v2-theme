@@ -9455,3 +9455,19 @@ small.text-span-bottom {
   padding-left: 19px;
   text-align: left;
 }
+
+.newsletter-section-form {
+  padding-top: 2rem;
+}
+
+.hr-footer {
+  border-bottom: 1px solid white;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.icons-left-footer {
+  float: left;
+  top: 57px;
+  position: relative;
+}

@@ -9,7 +9,7 @@
           <div class="rte align-desktop">{{ section.settings.subheading }}</div>
         {% endif %}
       </div>
-      <div>
+      <div class="newsletter-section-form">
         {%- assign formId = 'Contact_' | append: section.id -%}
         {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
           {%- if form.posted_successfully? -%}
