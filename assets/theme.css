@@ -1899,12 +1899,13 @@ a[href^="tel"] {
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: 2px;
-  padding: 8px 15px;
-  background-color: var(--color-btn-primary);
-  color: var(--color-btn-primary-text);
-  font-family: var(--font-stack-header);
+  padding: 13px 15px;
+  background-color: white;
+  color: black;
+  border:1px solid black;
+  font-family: "gill-sans-nova" !important;
   font-style: var(--font-style-header);
-  font-weight: var(--font-weight-header);
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   white-space: normal;
@@ -1912,6 +1913,8 @@ a[href^="tel"] {
     ((var(--font-size-base) - 2) / (var(--font-size-base))) * 1em
   );
 }
+
+
 @media only screen and (min-width: 750px) {
   .btn,
   .shopify-payment-button .shopify-payment-button__button--unbranded {
@@ -2924,6 +2927,7 @@ hr {
 }
 .js-drawer-open-top .drawer {
   display: block;
+  height: 100% !important;
 }
 
 .drawer--top {
@@ -5850,8 +5854,9 @@ hr {
 
 .search-bar__interior {
   height: 100%;
-  display: flex;
-  flex: 1;
+  display: block;
+  margin-top: 23px;
+  width: 100%;
 }
 @media only screen and (min-width: 750px) {
   .search-bar__interior {
@@ -5916,7 +5921,8 @@ hr {
   color: var(--color-text-field-text);
   background-color: var(--color-text-field);
   border: none;
-  border: 1px solid var(--color-border-form);
+  border: 1px solid #ACACAC;
+  border-radius: 20px;
 }
 
 .search-bar__close {
@@ -6944,6 +6950,7 @@ hr {
     font-size: calc(
       ((var(--font-size-base) - 1) / (var(--font-size-base))) * 1em
     );
+    align-items: center;
   }
 }
 .price dl {
@@ -9470,4 +9477,18 @@ small.text-span-bottom {
   float: left;
   top: 57px;
   position: relative;
+}
+
+.cart-aligment-mobile {
+  margin-top: 6px;
+  margin-left: 10px;
+}
+
+.search-clear-btn {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 5px;
+  left: 280px;
 }
