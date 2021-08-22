@@ -1923,8 +1923,8 @@ a[href^="tel"] {
   .shopify-payment-button__button--unbranded:not([disabled]):hover,
 .btn:focus,
 .shopify-payment-button .shopify-payment-button__button--unbranded:focus {
-  color: var(--color-btn-primary-text);
-  background-color: var(--color-btn-primary-focus);
+  color: black;
+  background-color: transparent;
 }
 .btn .icon-arrow-right,
 .shopify-payment-button
@@ -2641,17 +2641,22 @@ textarea {
 .site-nav__link:focus .site-nav__label,
 .site-nav__link:not([disabled]):hover .site-nav__label {
   border-bottom-color: var(--color-text);
+  font-size: 1.5rem !important;
 }
 
 @media only screen and (max-width: 989px) {
   .site-nav__link--button {
-    font-size: calc(var(--font-size-base) * 1px);
+    font-size: 1.5rem !important;
+  }
+  .site-nav__link--button > span {
+    font-size: 1.5rem !important;
   }
 }
 
 .site-nav__link--button:focus,
 .site-nav__link--button:hover {
   color: var(--color-text-focus);
+  font-size: 1.5rem;
 }
 
 /*================ Dropdowns ================*/
@@ -2670,7 +2675,6 @@ textarea {
   margin: 0;
   z-index: 7;
   text-align: left;
-  border: 1px solid var(--color-border);
   background: var(--color-bg);
   left: -1px;
   top: 41px;
@@ -2692,6 +2696,8 @@ textarea {
 
 .site-nav__dropdown--left:not(.site-nav__dropdown--centered) {
   left: 0;
+  top: 65px;
+  border-top: 1px solid black;
 }
 
 .site-nav__dropdown--centered {
@@ -5186,6 +5192,17 @@ hr {
   font-size: calc(((16) / (var(--font-size-base))) * 1em);
   font-weight: var(--font-weight-header);
 }
+
+.announcement-bar button {
+  background: transparent;
+  border: none;
+  color: white;
+  position: absolute;
+  top: 14px;
+  right: 30px;
+  font-size: 1.3rem;
+}
+
 @media only screen and (min-width: 750px) {
   .announcement-bar__message {
     padding-left: 55px;
@@ -6757,10 +6774,12 @@ hr {
   max-width: 100%;
   display: inline-block;
   word-wrap: break-word;
-  background-color: var(--color-btn-primary);
-  color: var(--color-btn-primary-text);
+  background-color: transparent;
+  color: black;
   min-height: 3.125rem;
   line-height: 2.2;
+  padding: 12px 90px;
+  border-radius: 0;
 }
 @media only screen and (max-width: 749px) {
   .slideshow__btn {
@@ -6963,6 +6982,9 @@ hr {
   align-items: flex-start;
   margin-top: 0;
   margin-bottom: 0;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 @media only screen and (max-width: 749px) {
   .price {
@@ -7119,6 +7141,8 @@ hr {
 }
 .price--sold-out .price__badge--sold-out {
   display: flex;
+  position: absolute;
+  right: 0;
 }
 
 .price__badges--listing {
@@ -7352,6 +7376,7 @@ hr {
   .site-footer .h4 {
     min-height: calc(var(--font-size-header) * 0.7);
     margin-bottom: 25px;
+    font-weight: 400;
   }
 }
 
@@ -7510,6 +7535,7 @@ hr {
 @media only screen and (max-width: 749px) {
   .site-footer__linklist.list--inline > li {
     display: block;
+    font-size: 1.5 rem;
   }
 }
 
@@ -7653,6 +7679,14 @@ hr {
 @media only screen and (max-width: 749px) {
   .feature-row__image {
     order: 1;
+  }
+  .site-footer__copyright-content {
+    position: relative;
+    top: -107px;
+  }
+  .icons-left-footer {
+    float: none;
+    top: 7px;
   }
 }
 
@@ -8542,7 +8576,7 @@ hr {
 }
 .product-card:hover .product-card__title,
 .product-card:focus-within .product-card__title {
-  border-bottom-color: var(--color-text);
+  border-bottom-color: transparent;
 }
 
 .product-card__image-with-placeholder-wrapper {
@@ -9242,6 +9276,33 @@ hr {
   padding: 10px 6px;
 }
 
+
+.sub-menu {
+  float: left;
+  display: block;
+  text-align: center;
+}
+
+.sub-menu .menu-tile {
+  display: block;
+  margin-top: 20px;
+}
+
+.mobile-bottom ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobile-bottom li {
+ display: inline-block;
+ padding: 2px 12px;
+}
+
+.mobile-bottom span {
+  display: block;
+}
+
 .nav-item-bottom {
   padding: 12px 5px;
 }
@@ -9564,5 +9625,40 @@ small.text-span-bottom {
   .newsletter-section-inner {
     grid-auto-rows: 14rem;
   }
-  
+
+  .site-footer__copyright-content {
+    position: relative;
+    top: -107px;
+  }
+  .icons-left-footer {
+    float: none;
+    top: 7px;
+  }
+  .input-group {
+    width: 100%;
+  }
+  .scrollmenu {
+    background-color: transparent;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 14px;
+  }
+  .scrollmenu a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid #cacaca;
+    padding: 3px 13px;
+    border-radius: 9px;
+  }
+
+  .announcement-bar button {
+    right: 5px;
+  }
 }
+
+
+

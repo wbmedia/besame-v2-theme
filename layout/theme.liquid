@@ -532,14 +532,23 @@
       }
       .site-nav--centered .site-nav__link {
         padding-top: 0;
+        font-size: 1.5rem;
+        border: none;
+        color: black;
       }
+
+      .site-nav--centered .site-nav__link button:hover {
+        display: block;
+        color: black;
+      }
+
       .site-nav__link .icon-chevron-down {
         width: calc(8em / 16);
         height: calc(8em / 16);
         margin-left: 0.5rem;
       }
       .site-nav__label {
-        border-bottom: 1px solid transparent;
+        border-bottom: none;
       }
       .site-nav__link--active .site-nav__label {
         border-bottom-color: var(--color-text);
