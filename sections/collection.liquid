@@ -3,6 +3,7 @@
   <div class="section-header text-left">
     <h2>{{ section.settings.title | escape }}</h2>
   </div>
+  
   {% endif %} {%- assign collection = collections[section.settings.collection]
   -%} {% case section.settings.grid %} {% when 2 %} {%- assign max_height = 530
   -%} {%- assign grid_item_width = 'medium-up--one-half' -%} {% when 3 %} {%-
