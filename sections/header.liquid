@@ -129,7 +129,7 @@
       </div>
 
       <div class="cart_mobile hide-desktop">
-        <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false"> 
+        <a href="#" onclick="openCart()" class="site-header__icon site-header__cart" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false"> 
           <?xml version="1.0" encoding="utf-8"?>
           <svg class="cart-aligment-mobile" xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
             <g id="Shopicon">
@@ -216,7 +216,7 @@
             </span>
           </a>
 
-          <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false">
+          <a href="#" onclick="openCart()" class="site-header__icon site-header__cart" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false">
             <?xml version="1.0" encoding="utf-8"?>
             <span class="span-icons">
               <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25">
@@ -235,6 +235,7 @@
             </div>
             <span>My Cart</span>
           </a>
+          <!-- <a href="#" onclick="openCart()">cart</a> -->
 
           {% unless linklists[section.settings.main_linklist] == blank %}
             <button type="button" class="btn--link site-header__icon site-header__menu js-mobile-nav-toggle mobile-nav--open hide-mobile" aria-controls="MobileNav"  aria-expanded="false" aria-label="{{ 'layout.navigation.menu' | t }}">

@@ -732,6 +732,8 @@
     {%- if settings.enable_ajax -%} {% include 'cart-popup' %} {%- endif -%} {%
     section 'header' %}
 
+    {% render "cart-drawer" %}
+
     <div class="page-container drawer-page-content" id="PageContainer">
       <main
         class="main-content js-focus-hidden"
