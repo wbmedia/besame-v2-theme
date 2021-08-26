@@ -173,10 +173,7 @@
               </a>
             {% else %}
               <a href="{{ routes.account_login_url }}" class="site-header__icon site-header__account">
-                <!-- {% include 'icon-login' %} -->
-                <!-- <span class="icon__fallback-text"></span> -->
                 <span class="span-icons">
-                  <!-- {{ 'layout.customer.log_in' | t }} -->
                   <?xml version="1.0" encoding="utf-8"?>
                   <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
                   <g id="Shopicon">
@@ -191,6 +188,7 @@
               </a>
             {% endif %}
           {% endif %}
+          {% if customer %}
           <a href="{{ routes.account_url }}">
            <span class="span-icons"> <?xml version="1.0" encoding="utf-8"?>
             <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
@@ -203,6 +201,7 @@
             </span>
             <span>My Account</span>
           </a>
+          {% endif %}
           <a href="#swym-wishlist" class="swym-wishlist">
             <span class="span-icons">
               <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>

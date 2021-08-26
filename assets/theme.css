@@ -9786,6 +9786,10 @@ small.text-span-bottom {
     width: 100%;
     animation: smoothScroll 1s forwards;
   }
+  .mobile-bottom li {
+    display: inline-block;
+    padding: 2px 8px;
+   }
 }
 
 
