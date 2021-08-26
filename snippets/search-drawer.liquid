@@ -17,8 +17,9 @@
             class="search-form__input search-bar__input"
             data-predictive-search-drawer-input
             data-base-url="{{ routes.search_url }}"
+            onkeyup="showClearSearch()"
           />
-          <button type="button" onclick="document.getElementById('clear-search').value = ''"  class="search-clear-btn">
+          <button id="close" type="button" onclick="document.getElementById('clear-search').value = ''"  class="search-clear-btn">
             {% include 'icon-close' %}
           </button> 
           <input type="hidden" name="options[prefix]" value="last" aria-hidden="true" />

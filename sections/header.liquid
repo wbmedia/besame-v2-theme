@@ -41,7 +41,11 @@
         }
       </style>
 
-      <div id="hide-announcement-bar" class="announcement-bar" role="region" aria-label="{{ 'sections.header.announcement_bar_label' | t }}">
+      <div 
+        id="hide-announcement-bar" 
+        class="announcement-bar" 
+        role="region" aria-label="{{ 'sections.header.announcement_bar_label' | t }}"
+      >
         {%- unless section.settings.message_link == blank -%}
           <a href="{{ section.settings.message_link }}" class="announcement-bar__link">
         {%- endunless -%}
@@ -57,7 +61,7 @@
 
   <header>
   <div class="site-header{% if section.settings.align_logo == 'left' %} border-bottom logo--left{% else %} logo--center{% endif %}" role="banner">
-    <div class="grid grid--no-gutters grid--table site-header__mobile-nav">
+    <div id="navbar" class="grid grid--no-gutters grid--table site-header__mobile-nav">
       
       {% if section.settings.align_logo == 'center' %}
         {%- assign logo_classes = 'medium-up--one-third medium-up--push-one-third logo-align--center' -%}
@@ -169,10 +173,7 @@
               </a>
             {% else %}
               <a href="{{ routes.account_login_url }}" class="site-header__icon site-header__account">
-                <!-- {% include 'icon-login' %} -->
-                <!-- <span class="icon__fallback-text"></span> -->
                 <span class="span-icons">
-                  <!-- {{ 'layout.customer.log_in' | t }} -->
                   <?xml version="1.0" encoding="utf-8"?>
                   <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
                   <g id="Shopicon">
@@ -187,6 +188,7 @@
               </a>
             {% endif %}
           {% endif %}
+          {% if customer %}
           <a href="{{ routes.account_url }}">
            <span class="span-icons"> <?xml version="1.0" encoding="utf-8"?>
             <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
@@ -199,6 +201,7 @@
             </span>
             <span>My Account</span>
           </a>
+          {% endif %}
           <a href="#swym-wishlist" class="swym-wishlist">
             <span class="span-icons">
               <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
@@ -269,19 +272,45 @@
     </nav> -->
     
     <div class="scrollmenu hide-desktop" id="scroll-container">
-      <a href="#">New</a>
-      <a href="#">Collections</a>
-      <a href="#">Lips</a>
-      <a href="#">Eyes</a>
-      <a href="#">Face</a>
-      <a href="#">Skin</a>
-      <a href="#">Nails</a>  
-      <a href="#">Accesories</a>
-      <a href="#">Virtual Shopping</a>
-      <a href="#">Takr a Quiz</a>
-      <a href="#">Blog</a>
+      <a href="/collections/new-product">New</a>
+      <a href="/collections">Collections</a>
+      <a href="/collections/lipstick">Lips</a>
+      <a href="/collections/eyes">Eyes</a>
+      <a href="/collections/face-1">Face</a>
+      <a href="/snow-white">Skin</a>
+      <a href="/pro-products">Nails</a>  
+      <a href="/collections/accessories">Accesories</a>
+      <a href="/virtual-shoping">Virtual Shopping</a>
+      <a href="/quiz">Take a Quiz</a>
+      <a href="/blog">Blog</a>
     </div>  
 
+    <div id="shopMenu" class="shop-menu hide-desktop">
+      <ul>
+        <li>Shop <button type="button" onclick="closeMenuShop()">X</button> </li>
+        <li>
+          <a href="/collections">Collections</a>
+        </li>
+        <li>
+          <a href="/collections/lipstick">Lips</a>
+        </li>
+        <li>
+          <a href="/collections/eyes">Eyes</a>
+        </li>
+        <li>
+          <a href="/collections/face-1">Face</a>
+        </li>
+        <li>
+          <a href="/snow-white">Skin</a>
+        </li>
+        <li>
+          <a href="/pro-products">Nails</a>
+        </li>
+        <li>
+          <a href="/collections/accessories">Accesories</a>
+        </li>
+      </ul>
+    </div>
     <nav class="fixed-bottom hide-desktop mobile-bottom">
       <ul>
         <li>
@@ -295,7 +324,7 @@
           <span>Home</span>
         </li>
         <li>
-          <a href="/collections">
+          <a onclick="openMenuShop()" href="#">
             <?xml version="1.0" encoding="utf-8"?>
             <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
             <g id="Shopicon">
