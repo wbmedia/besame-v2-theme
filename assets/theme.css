@@ -1,51 +1,4 @@
 @charset "UTF-8";
-/*============================================================================
-  Debut | Built with Shopify Slate
-
-  Some things to know about this file:
-    - Sass is compiled on Shopify's server so you don't need to convert it to CSS yourself
-    - The output CSS is compressed and comments are removed
-    - You cannot use native CSS/Sass @imports in this file without a build script
-==============================================================================*/
-/*================ SASS HELPERS ================*/
-/*================ #Mixins ================*/
-/*============================================================================
-  Prefix mixin for generating vendor prefixes.
-  Based on https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_prefixer.scss
-
-  Usage:
-    // Input:
-    .element {
-      @include prefix(transform, scale(1), ms webkit spec);
-    }
-
-    // Output:
-    .element {
-      -ms-transform: scale(1);
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-==============================================================================*/
-/*================ Media Query Mixin ================*/
-/*================ Responsive Show/Hide Helper ================*/
-/*================ Responsive Text Alignment Helper ================*/
-/*============================================================================
-  Convert pixels (unitless) to ems
-  eg. for a relational value of 12px write calc-font-size(12) when the parent is 16px
-  if the parent is another value say 24px write calc-font-size(12, 24)
-  Based on https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functions/_px-to-em.scss
-==============================================================================*/
-/*============================================================================
-  Flexbox prefix mixins from Bourbon
-    https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/css3/_flex-box.scss
-==============================================================================*/
-/*================ VARIABLES ================*/
-/*============================================================================
-  Grid Breakpoints and Class Names
-    - Do not change the variable names
-    - Breakpoint pixel values are used in the window.theme.breakpoints object
-==============================================================================*/
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 @import url("https://use.typekit.net/gfp5rww.css");
 @import url("https://use.typekit.net/nfo3xxj.css");
@@ -60,34 +13,15 @@ body {
   font-size: 14px;
   font-weight: 400;
 }
-/*============================================================================
-  Generate breakpoint-specific column widths and push classes
-    - Default column widths: $grid-breakpoint-has-widths: ($small, $medium-up);
-    - Default is no push classes
-==============================================================================*/
-/*================ Color Variables ================*/
-/*================ Sizing Variables ================*/
-/*================ Footer Variables ================*/
-/*================ Z-Index ================*/
-/*================ SVG ================*/
-/*================ Drawers ================*/
-/*================ Hero Slider ================*/
-/*================ Typography ================*/
-/*================ Gift Cards ================*/
-/*================ Z-index ================*/
-/*================ Product video ================*/
-/*================ Image placeholder ================*/
-/*================ VENDOR ================*/
-/*============================================================================
-  Slick Slider 1.6.0
 
-  - If upgrading Slick's styles, use the following variables/functions
-    instead of the slick defaults (from slick-theme.scss)
-  - This file includes default slick.scss styles (at Slick Slider SCSS)
-    and slick-theme.scss (at Slick Slider Theme). Upgrade each area individually.
-  - Remove `outline: none` from `.slick-dots li button`
-==============================================================================*/
-/*================ Slick Slider SCSS ================*/
+svg::hover {
+  fill:black !important;
+}
+
+a::hover {
+ color: black;
+}
+
 
 .slick-slider {
   position: relative;
