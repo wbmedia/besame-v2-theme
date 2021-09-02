@@ -59,7 +59,7 @@
           data-shopify-title="{{ product.title | escape }}"
           data-shopify-xr-hidden
         >
-          {% include 'icon-3d-badge-full-color' %}<span class='product-single__view-in-space-text'>{{ 'products.product.view_in_space' | t }}</span>
+          {% render 'icon-3d-badge-full-color' %}<span class='product-single__view-in-space-text'>{{ 'products.product.view_in_space' | t }}</span>
         </button>
       {%- endif -%}
 
@@ -138,7 +138,7 @@
         <script>window.performance.mark('debut:product:title_visible');</script>
 
           <div class="product__price">
-            {% include 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %}
+            {% render 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %}
           </div>
 
           {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
@@ -170,7 +170,7 @@
                     {% for value in option.values %}
                       <input class="single-option-selector-{{ section.id }}"  id="color-{{forloop.index}}" type="radio" name="color" value={{ value | escape }} data-index="option{{index}}" {% if option.selected_value == value %}cheked{% endif %}/>
                       <label for="color-{{forloop.index}}">{{value}}</label>
-                      <img src="{{ value | escape | append:'.jpg' | strip | asset_url }}" />
+                      <img src="{{ value | escape | append:'.jpg' | strip | asset_url }}"  />
                     {% endfor %}
                     </div>
                     {% else %}
@@ -214,7 +214,7 @@
                       >
                       <span id="increment" class="btnqty qtyplus icon icon-plus">+</span>
                     </div>
-                </div>
+                  </div>
                 </div>
               </div>
             {% endif %}
@@ -250,13 +250,13 @@
                     {% include 'icon-spinner' %}
                   </span>
                 </button>
-                <!-- {% if section.settings.enable_payment_button %}
+                {% if section.settings.enable_payment_button %}
                   {{ form | payment_button }}
-                {% endif %} -->
+                {% endif %}
               </div>
             </div>
           {% endform %}
-        </div>
+      </div>
 
         {%- comment -%}
           Live region for announcing updated price and availability to screen readers
@@ -287,13 +287,15 @@
         </div>
 
         <div class="product-single__description">
-          <!-- <div class="product-badge-continer">
+          {%- comment -%}
+          <div class="product-badge-continer">
             {% for tag in product.tags %}
               <span class="product-badge">{{ tag }}</span>
             {% endfor %}
-          </div> -->
+          </div>
+          {%- endcomment -%}
           {{ product.description }}
-          
+
           {% if section.settings.show_share_buttons %}
             {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}
           {% endif %}
@@ -308,7 +310,8 @@
   <script type="application/json" id="ModelJson-{{ section.id }}">
     {{ product.media | where: 'media_type', 'model' | json }}
   </script>
-  <script src="https://code.jquery.com/jquery-3.4.1.js"></script> 
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
   <script> $('.qtybox .btnqty').on('click', function(){ 
     var qty = parseInt($(this).parent('.qtybox').find('.quantity-input').val());
      if($(this).hasClass('qtyplus')) { 

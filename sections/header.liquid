@@ -72,7 +72,7 @@
         <div class="site-header__icon_search_holder js-drawer-open-top" data-predictive-search-open-drawer>
           
           <button type="button" class="btn--link site-header__icon site-header__search-toggle js-drawer-open-top" data-predictive-search-open-drawer>
-            {% include 'icon-search' %}
+            {% include 'icon-search' %} Search
             <span class="icon__fallback-text">{{ 'layout.navigation.search' | t }}</span>
           </button>
         </div>
@@ -250,68 +250,76 @@
 
       </div>
     </div>
-    <!-- <nav class="vertical-align-middle scroll hide-desktop">
-      <span class="nav-item mobile-link">
-        <a href="">New</a>
-      </span>
-      <span class="nav-item mobile-link">
-        <a href="">Lips</a>
-      </span>
-      <span class="nav-item mobile-link">
-        <a href="">Face</a>
-      </span>
-      <span class="nav-item mobile-link">
-        <a href="">Collection & More</a>
-      </span>
-      <span class="nav-item mobile-link">
-        <a href="">Discover</a>
-      </span>
-      <span class="nav-item mobile-link">
-        <a href="">Blog</a>
-      </span>
-    </nav> -->
-    
+  
     <div class="scrollmenu hide-desktop" id="scroll-container">
       <a href="/collections/new-product">New</a>
       <a href="/collections">Collections</a>
       <a href="/collections/lipstick">Lips</a>
       <a href="/collections/eyes">Eyes</a>
       <a href="/collections/face-1">Face</a>
-      <a href="/snow-white">Skin</a>
-      <a href="/pro-products">Nails</a>  
+      <a href="/collections/besame-skin-care">Skin</a>
+      <a href="/collections/nails">Nails</a>  
       <a href="/collections/accessories">Accesories</a>
-      <a href="/virtual-shoping">Virtual Shopping</a>
-      <a href="/quiz">Take a Quiz</a>
-      <a href="/blog">Blog</a>
+      <a href="/products/virtual-shopping-experience">Virtual Shopping</a>
+      <a href="/find-your-shade-quiz">Take a Quiz</a>
+      <a href="/blogs/blog/join-the-disney-ultimate-princess-celebration-with-besames-exclusive-makeup-sets">Blog</a>
     </div>  
 
     <div id="shopMenu" class="shop-menu hide-desktop">
       <ul>
-        <li>Shop <button type="button" onclick="closeMenuShop()">X</button> </li>
+        <li><strong>SHOP</strong> <button type="button" onclick="closeMenuShop()">X</button> </li>
         <li>
-          <a href="/collections">Collections</a>
+          <a href="/collections">COLLECTIONS</a>
         </li>
         <li>
-          <a href="/collections/lipstick">Lips</a>
+          <a href="/collections/lipstick">LIPS</a>
         </li>
         <li>
-          <a href="/collections/eyes">Eyes</a>
+          <a href="/collections/eyes">EYES</a>
         </li>
         <li>
-          <a href="/collections/face-1">Face</a>
+          <a href="/collections/face-1">FACE</a>
         </li>
         <li>
-          <a href="/snow-white">Skin</a>
+          <a href="/collections/besame-skin-care">SKIN</a>
         </li>
         <li>
-          <a href="/pro-products">Nails</a>
+          <a href="/collections/nails">NAILS</a>
         </li>
         <li>
-          <a href="/collections/accessories">Accesories</a>
+          <a href="/collections/accessories">ACCESORIES</a>
         </li>
       </ul>
     </div>
-    <nav class="fixed-bottom hide-desktop mobile-bottom">
+
+    <div id="discoverMenu" class="shop-menu hide-desktop">
+      <ul>
+        <li><strong>DISCOVER</strong> <button type="button" onclick="closeDiscoveryMenu()">X</button> </li>
+        <li>
+          <a href="/collections">ABOUT BESAME</a>
+        </li>
+        <li>
+          <a href="/collections/lipstick">CLASSIC BEAUTY: THE HISTORY OF MAKE UP</a>
+        </li>
+        <li>
+          <a href="/collections/eyes">COLLABORATIONS</a>
+        </li>
+        <li>
+          <a href="/collections/face-1">REWARDS</a>
+        </li>
+        <li>
+          <a href="/snow-white">REVIEWS</a>
+        </li>
+        <li>
+          <a href="/pro-products">DEALS</a>
+        </li>
+        <li>
+          <a href="/collections/accessories">DIGITAL GIFTCARD</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="fixed-bottom hide-desktop mobile-bottom" id="showMenuShop">
+
       <ul>
         <li>
           <a href="/"><?xml version="1.0" encoding="utf-8"?>
@@ -324,7 +332,7 @@
           <span>Home</span>
         </li>
         <li>
-          <a onclick="openMenuShop()" href="#">
+          <a href="#" onclick="openMenuShop()">
             <?xml version="1.0" encoding="utf-8"?>
             <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
             <g id="Shopicon">
@@ -337,7 +345,7 @@
           <span class="text-span-bottom">Shop</span>
         </li>
         <li>
-          <a href="#swym-wishlist" class="swym-wishlist">
+          <a onclick="openDiscoveryMenu()" href="#">
             <?xml version="1.0" encoding="utf-8"?>
             <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
               <g id="Shopicon">
@@ -364,7 +372,7 @@
           <span class="text-span-bottom">Me</span>
         </li>
         <li>
-          <a href="/blogs/blog">
+          <a href="/blogs/blog/join-the-disney-ultimate-princess-celebration-with-besames-exclusive-makeup-sets">
             <?xml version="1.0" encoding="utf-8"?>
             <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
             <g id="Shopicon">
@@ -377,9 +385,9 @@
         <span class="text-span-bottom">Blogs</span>
         </li>
         <li>
-        <a href="/blogs/blog">
+        <a href="/blogs/blog/join-the-disney-ultimate-princess-celebration-with-besames-exclusive-makeup-sets">
           <?xml version="1.0" encoding="utf-8"?>
-          <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
+          <svg xmlns="http://www.w3.org/2000/svg" class="animate__animated animate__shakeX"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
             <g id="Shopicon">
               <path d="M40,36c2.2,0,4-1.8,4-4V8c0-2.2-1.8-4-4-4L8,4C5.8,4,4,5.8,4,8v36l8-8L40,36z M6,39.172V8c0-1.103,0.897-2,2-2l32,0
                 c1.103,0,2,0.897,2,2v24c0,1.103-0.897,2-2,2l-28.828,0L6,39.172z"/>

@@ -51,15 +51,15 @@
 	                background-color: {{ val| split:" " | last }};"
 	                >{{val}}<span>
 	      {% endfor %}
-	{% endif }
-{% endfor %}
+    {% endif }
+  {% endfor %}
   <div class="h4 grid-view-item__title product-card__title" aria-hidden="true">{{ product.title }}</div>
 
-  {% include 'product-price-listing', product: product, show_vendor: show_vendor %}
+  {% render 'product-price-listing', product: product, show_vendor: show_vendor %}
   <form method="post" action="/cart/add">
     <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
     <input style="visibility: hidden;" min="1" type="number" id="quantity" name="quantity" value="1"/>
     <input style="width: 100%;" type="submit" value="Add to cart" class="btn" />
   </form>
-
-</div>
+  {% render 'booking-form' %}
+</div>  

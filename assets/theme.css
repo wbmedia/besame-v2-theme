@@ -1,50 +1,4 @@
 @charset "UTF-8";
-/*============================================================================
-  Debut | Built with Shopify Slate
-
-  Some things to know about this file:
-    - Sass is compiled on Shopify's server so you don't need to convert it to CSS yourself
-    - The output CSS is compressed and comments are removed
-    - You cannot use native CSS/Sass @imports in this file without a build script
-==============================================================================*/
-/*================ SASS HELPERS ================*/
-/*================ #Mixins ================*/
-/*============================================================================
-  Prefix mixin for generating vendor prefixes.
-  Based on https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_prefixer.scss
-
-  Usage:
-    // Input:
-    .element {
-      @include prefix(transform, scale(1), ms webkit spec);
-    }
-
-    // Output:
-    .element {
-      -ms-transform: scale(1);
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-==============================================================================*/
-/*================ Media Query Mixin ================*/
-/*================ Responsive Show/Hide Helper ================*/
-/*================ Responsive Text Alignment Helper ================*/
-/*============================================================================
-  Convert pixels (unitless) to ems
-  eg. for a relational value of 12px write calc-font-size(12) when the parent is 16px
-  if the parent is another value say 24px write calc-font-size(12, 24)
-  Based on https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functions/_px-to-em.scss
-==============================================================================*/
-/*============================================================================
-  Flexbox prefix mixins from Bourbon
-    https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/css3/_flex-box.scss
-==============================================================================*/
-/*================ VARIABLES ================*/
-/*============================================================================
-  Grid Breakpoints and Class Names
-    - Do not change the variable names
-    - Breakpoint pixel values are used in the window.theme.breakpoints object
-==============================================================================*/
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 @import url("https://use.typekit.net/gfp5rww.css");
@@ -54,40 +8,15 @@
 :root {
   --black: #000000;
   --white: #ffffff;
+  --animate-duration: 800ms;
+  --animate-delay: 0.9s;
 }
 body {
   font-family: "gill-sans-nova";
   font-size: 14px;
   font-weight: 400;
 }
-/*============================================================================
-  Generate breakpoint-specific column widths and push classes
-    - Default column widths: $grid-breakpoint-has-widths: ($small, $medium-up);
-    - Default is no push classes
-==============================================================================*/
-/*================ Color Variables ================*/
-/*================ Sizing Variables ================*/
-/*================ Footer Variables ================*/
-/*================ Z-Index ================*/
-/*================ SVG ================*/
-/*================ Drawers ================*/
-/*================ Hero Slider ================*/
-/*================ Typography ================*/
-/*================ Gift Cards ================*/
-/*================ Z-index ================*/
-/*================ Product video ================*/
-/*================ Image placeholder ================*/
-/*================ VENDOR ================*/
-/*============================================================================
-  Slick Slider 1.6.0
 
-  - If upgrading Slick's styles, use the following variables/functions
-    instead of the slick defaults (from slick-theme.scss)
-  - This file includes default slick.scss styles (at Slick Slider SCSS)
-    and slick-theme.scss (at Slick Slider Theme). Upgrade each area individually.
-  - Remove `outline: none` from `.slick-dots li button`
-==============================================================================*/
-/*================ Slick Slider SCSS ================*/
 
 .slick-slider {
   position: relative;
@@ -3693,7 +3622,7 @@ hr {
 }
 @media only screen and (min-width: 990px) {
   .product-form__item {
-    flex-basis: 50%;
+    flex-basis: 100%;
     padding: 0 5px;
   }
   .product-single--large-image .product-form__item {
@@ -3701,6 +3630,9 @@ hr {
   }
   .hide-desktop {
     display: none;
+  }
+  .qtyplus {
+    margin-right: 10px;
   }
 }
 .product-form__item label {
@@ -9372,7 +9304,7 @@ hr {
     font-family: "meno-banner-extra-condensed";
     overflow-wrap: break-word;
     width: 75%;
-    font-size: 6rem;
+    font-size: 5rem;
   }
 }
 
@@ -9687,9 +9619,24 @@ small.text-span-bottom {
   .announcement-bar button {
     right: 5px;
   }
+  .cart_drawer {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 415px) { 
+  .site-header__logo-image>img {
+    width: 140px!important;
+    margin-left: -26px;
+    top: -11px; 
+  }
+  .site-header__icon_search_holder {
+    left: 120px;
+    width: 59%;
+    border: 1px solid #eee;
+    background-color: #eee;
+    top: 19px;
+  }
   .search-clear-btn {
     left: 296px;
   }
@@ -9741,13 +9688,30 @@ small.text-span-bottom {
     border-bottom: none;
   }
 
+  .shop-menu > a {
+    text-transform: capitalize;
+  }
+
   .sticky {
     position: fixed;
     top: 0;
     width: 100%;
     animation: smoothScroll 1s forwards;
   }
-  
+  .rps_left_column {
+    margin-left: 10px;
+  }
+  ._3j46YJm_Zs5E2sJJ6PaPjB {
+    background-color: white !important;
+    width: 100% !important;
+  }
+  .cart_drawer {
+    width: 100%;
+  }
+
+  #gobot-wrapper .gobot-toggle .gobot-widget.icon.bottom {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 375px) { 
@@ -9765,15 +9729,47 @@ small.text-span-bottom {
     width: 100%;
     animation: smoothScroll 1s forwards;
   }
+  .rps_left_column {
+    margin-left: 10px;
+  }
+  ._3j46YJm_Zs5E2sJJ6PaPjB {
+    background-color: white !important;
+    width: 100% !important;
+  }
+  .cart_drawer {
+    width: 100%;
+  }
+
+  #gobot-wrapper .gobot-toggle .gobot-widget.icon.bottom {
+    display: none;
+  }
+
+  .site-header__logo-image > img {
+    width: 135px !important;
+    margin-left: -20px;
+  }
+
+  .site-header__icon_search_holder {
+    background-color: #eee;
+    top: 23px;
+    width: 53%;
+    left: 121px;
+    border: 1px solid #eee;
+  }
 }
 
 @media only screen and (max-width: 320px) { 
   .search-clear-btn {
     left: 204px;
   }
+  .site-header__logo-image>img {
+    width: 131px!important;
+    margin-left: -27px;
+  }
   .site-header__icon_search_holder {
     left: 108px;
     width: 48%;
+    border: 1px solid #eee;
   }
   .announcement-bar button {
     top: 15px;
@@ -9789,7 +9785,31 @@ small.text-span-bottom {
   .mobile-bottom li {
     display: inline-block;
     padding: 2px 8px;
-   }
+  }
+  .rps_left_column {
+    margin-left: 10px;
+  }
+
+  ._3j46YJm_Zs5E2sJJ6PaPjB {
+    background-color: white !important;
+    width: 100% !important;
+  }
+  .cart_drawer {
+    width: 100%;
+  }
+
+  #gobot-wrapper .gobot-toggle .gobot-widget.icon.bottom {
+    display: none;
+  }
 }
 
-
+._25bkWC3AdEkI1wb_w91twd {
+  display: block !important;
+}
+.rps_trademark {
+  display: none !important;
+}
+._3j46YJm_Zs5E2sJJ6PaPjB {
+  background-color: white !important;
+  width: 280px !important;
+}
