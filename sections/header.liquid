@@ -251,7 +251,7 @@
       </div>
     </div>
   
-    <div class="scrollmenu hide-desktop" id="scroll-container">
+    <!-- <div class="scrollmenu hide-desktop" id="scroll-container">
       <a href="/collections/new-product">New</a>
       <a href="/collections">Collections</a>
       <a href="/collections/lipstick">Lips</a>
@@ -263,59 +263,32 @@
       <a href="/products/virtual-shopping-experience">Virtual Shopping</a>
       <a href="/find-your-shade-quiz">Take a Quiz</a>
       <a href="/blogs/blog/join-the-disney-ultimate-princess-celebration-with-besames-exclusive-makeup-sets">Blog</a>
-    </div>  
-
+    </div>
+     -->
+    <div class="scrollmenu hide-desktop" id="scroll-container">
+      {% for link in linklists.mobile-top.links %}
+          <a href="{{ link.url }}">{{ link.title }}</a>  
+      {% endfor %}
+    </div>
     <div id="shopMenu" class="shop-menu hide-desktop">
       <ul>
         <li><strong>SHOP</strong> <button type="button" onclick="closeMenuShop()">X</button> </li>
-        <li>
-          <a href="/collections">COLLECTIONS</a>
-        </li>
-        <li>
-          <a href="/collections/lipstick">LIPS</a>
-        </li>
-        <li>
-          <a href="/collections/eyes">EYES</a>
-        </li>
-        <li>
-          <a href="/collections/face-1">FACE</a>
-        </li>
-        <li>
-          <a href="/collections/besame-skin-care">SKIN</a>
-        </li>
-        <li>
-          <a href="/collections/nails">NAILS</a>
-        </li>
-        <li>
-          <a href="/collections/accessories">ACCESORIES</a>
-        </li>
+        {% for link in linklists.main-mobile.links %}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </div>
 
     <div id="discoverMenu" class="shop-menu hide-desktop">
       <ul>
         <li><strong>DISCOVER</strong> <button type="button" onclick="closeDiscoveryMenu()">X</button> </li>
-        <li>
-          <a href="/collections">ABOUT BESAME</a>
-        </li>
-        <li>
-          <a href="/collections/lipstick">CLASSIC BEAUTY: THE HISTORY OF MAKE UP</a>
-        </li>
-        <li>
-          <a href="/collections/eyes">COLLABORATIONS</a>
-        </li>
-        <li>
-          <a href="/collections/face-1">REWARDS</a>
-        </li>
-        <li>
-          <a href="/snow-white">REVIEWS</a>
-        </li>
-        <li>
-          <a href="/pro-products">DEALS</a>
-        </li>
-        <li>
-          <a href="/collections/accessories">DIGITAL GIFTCARD</a>
-        </li>
+        {% for link in linklists.main-discover.links %}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </div>
     <nav class="fixed-bottom hide-desktop mobile-bottom" id="showMenuShop">
@@ -385,7 +358,7 @@
         <span class="text-span-bottom">Blogs</span>
         </li>
         <li>
-        <a href="/blogs/blog/join-the-disney-ultimate-princess-celebration-with-besames-exclusive-makeup-sets">
+        <a href="#" onclick="openChatBoot()">
           <?xml version="1.0" encoding="utf-8"?>
           <svg xmlns="http://www.w3.org/2000/svg" class="animate__animated animate__shakeX"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
             <g id="Shopicon">

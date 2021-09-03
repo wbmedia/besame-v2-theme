@@ -100,11 +100,23 @@ input[type=number] {
   .shop-menu {
     display: none;
   }
+  .hide-menu {
+    display: none !important;
+  }
 }
 
 @media only screen and (max-width: 768px) { 
   .shop-menu {
     display: none;
+  }
+  .hide-menu {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 724px) { 
+  .hide-menu {
+    display: none !important;
   }
 }
 
@@ -124,4 +136,10 @@ input[type=number] {
   -ms-filter: blur(10px);
   pointer-events: none;
   user-select: none;
+}
+
+.actives .text-span-bottom:hover {
+  background-color: #000;
+  font-weight: bold;
+  color: #ebebeb;
 }

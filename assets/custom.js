@@ -47,6 +47,22 @@ function closeDiscoveryMenu() {
   removeBlur.classList.remove('active');
 }
 
+function openChatBoot() {
+  document.getElementById("gobot").style = "display: block";
+  const chat = document.getElementById("gobot-wrapper")
+  chat.classList.add('gobot-open')
+}
+
+const active = document.getElementById("showMenuShop")
+let btns = active.getElementsByClassName("text-span-bottom")
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("actives");
+  current[0].className = current[0].className.replace(" actives", "");
+  this.className += " actives";
+  });
+}
+
 ("use strict");
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
