@@ -9292,7 +9292,8 @@ hr {
 .site-header__icon_search_holder {
   position: absolute;
   left: -350px;
-  border: 1px solid;
+  border: 1px solid #eee;
+  background-color: #eee;
   border-radius: 17px;
   width: 90%;
   height: 40px;
@@ -9770,6 +9771,7 @@ small.text-span-bottom {
     left: 108px;
     width: 48%;
     border: 1px solid #eee;
+    background-color: #eee;
   }
   .announcement-bar button {
     top: 15px;
