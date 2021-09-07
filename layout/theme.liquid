@@ -16,6 +16,11 @@
     font_modify: 'weight', 'bold' -%} {%- assign base_font_italic = base_font |
     font_modify: 'style', 'italic' -%} {%- assign base_font_bold_italic =
     base_font_bold | font_modify: 'style', 'italic' -%}
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
     <link rel="preload" href="{{ 'theme.css' | asset_url }}" as="style" />
     <link
@@ -592,8 +597,60 @@
       .critical-hidden {
         display: none;
       }
-    </style>
 
+      /* POP UP */
+.NewsletterPopup[aria-hidden=false] {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.NewsletterPopup {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  width: calc(100% - 30px);
+  padding: 24px 30px 30px 30px;
+  background: #000;
+  color: #fff;
+  z-index: 50;
+  text-align: center;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 30%);
+  visibility: hidden;
+  transform: translateY(25px);
+  opacity: 0;
+  transition: all .5s cubic-bezier(.645, .045, .355, 1);
+}
+
+.NewsletterPopup__Close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.Heading, .rc_header-settings__title h2 {
+  font-family: Futura,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #000;
+  transition: color .2s ease-in-out;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+
+
+@media screen and (min-width: 641px) {
+  .NewsletterPopup {
+    max-width: 385px;
+    right: 25px;
+    bottom: 25px;
+    left: auto;
+    padding-top: 35px;
+  }
+}
+
+    </style>
     <script>
       window.performance.mark("debut:theme_stylesheet_loaded.start");
 
@@ -619,7 +676,7 @@
       media="print"
       onload="this.media='all';onLoadStylesheet()"
     />
-
+  
     <style>
       {{ header_font | font_face: font_display: 'swap' }}
       {{ base_font | font_face: font_display: 'swap' }}
@@ -708,31 +765,30 @@
         scripts.parentNode.insertBefore(polyfill, scripts);
       }
     </script>
-    {{
-      "drawer.css" | asset_url | stylesheet_tag
-    }}
-    {{
-      "drawer.js" | asset_url | script_tag
-    }}
-    {{
-      "custom.js" | asset_url | script_tag
-    }}
+    {{ 'custom.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    {{ content_for_header }}
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    {{
-      content_for_header
-    }}
   </head>
 
   <body class="template-{{ request.page_type | handle }}">
-    <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{
-      "general.accessibility.skip_to_content" | t
-    }}</a>
+    <div id="blur" class="content">
+      <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ "general.accessibility.skip_to_content" | t }}</a>
 
-    {%- if settings.enable_ajax -%} {% include 'cart-popup' %} {%- endif -%} {%
-    section 'header' %}
-
-    {% render "cart-drawer" %}
+    {%- if settings.enable_ajax -%} 
+    {% render 'cart-popup' %} 
+    {%- endif -%} 
+    
+    {%section 'header' %}
+    {% section 'popup' %}
+    
+    {%- if page.request_type != 'cart' and settings.show_cart_drawer -%}
+      {% render 'cart-drawer' %}
+    {%- endif -%}
 
     <div class="page-container drawer-page-content" id="PageContainer">
       <main
@@ -759,5 +815,7 @@
         {{ "general.accessibility.selection_help" | t }}
       </li>
     </ul>
+    </div>
+    
   </body>
 </html>

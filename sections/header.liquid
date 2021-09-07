@@ -72,7 +72,7 @@
         <div class="site-header__icon_search_holder js-drawer-open-top" data-predictive-search-open-drawer>
           
           <button type="button" class="btn--link site-header__icon site-header__search-toggle js-drawer-open-top" data-predictive-search-open-drawer>
-            {% include 'icon-search' %}
+            {% include 'icon-search' %} Search
             <span class="icon__fallback-text">{{ 'layout.navigation.search' | t }}</span>
           </button>
         </div>
@@ -219,7 +219,7 @@
             </span>
           </a>
 
-          <a href="#" onclick="openCart()" class="site-header__icon site-header__cart" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false">
+          <a href="{{ routes.cart_url }}"  class="site-header__icon site-header__cart" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false">
             <?xml version="1.0" encoding="utf-8"?>
             <span class="span-icons">
               <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25">
@@ -250,69 +250,50 @@
 
       </div>
     </div>
-    <!-- <nav class="vertical-align-middle scroll hide-desktop">
-      <span class="nav-item mobile-link">
-        <a href="">New</a>
-      </span>
-      <span class="nav-item mobile-link">
-        <a href="">Lips</a>
-      </span>
-      <span class="nav-item mobile-link">
-        <a href="">Face</a>
-      </span>
-      <span class="nav-item mobile-link">
-        <a href="">Collection & More</a>
-      </span>
-      <span class="nav-item mobile-link">
-        <a href="">Discover</a>
-      </span>
-      <span class="nav-item mobile-link">
-        <a href="">Blog</a>
-      </span>
-    </nav> -->
-    
-    <div class="scrollmenu hide-desktop" id="scroll-container">
+  
+    <!-- <div class="scrollmenu hide-desktop" id="scroll-container">
       <a href="/collections/new-product">New</a>
       <a href="/collections">Collections</a>
       <a href="/collections/lipstick">Lips</a>
       <a href="/collections/eyes">Eyes</a>
       <a href="/collections/face-1">Face</a>
-      <a href="/snow-white">Skin</a>
-      <a href="/pro-products">Nails</a>  
+      <a href="/collections/besame-skin-care">Skin</a>
+      <a href="/collections/nails">Nails</a>  
       <a href="/collections/accessories">Accesories</a>
-      <a href="/virtual-shoping">Virtual Shopping</a>
-      <a href="/quiz">Take a Quiz</a>
-      <a href="/blog">Blog</a>
-    </div>  
-
+      <a href="/products/virtual-shopping-experience">Virtual Shopping</a>
+      <a href="/find-your-shade-quiz">Take a Quiz</a>
+      <a href="/blogs/blog/join-the-disney-ultimate-princess-celebration-with-besames-exclusive-makeup-sets">Blog</a>
+    </div>
+     -->
+    <div class="scrollmenu hide-desktop" id="scroll-container">
+      {% for link in linklists.mobile-top.links %}
+          <a href="{{ link.url }}">{{ link.title }}</a>  
+      {% endfor %}
+    </div>
     <div id="shopMenu" class="shop-menu hide-desktop">
       <ul>
-        <li>Shop <button type="button" onclick="closeMenuShop()">X</button> </li>
-        <li>
-          <a href="/collections">Collections</a>
-        </li>
-        <li>
-          <a href="/collections/lipstick">Lips</a>
-        </li>
-        <li>
-          <a href="/collections/eyes">Eyes</a>
-        </li>
-        <li>
-          <a href="/collections/face-1">Face</a>
-        </li>
-        <li>
-          <a href="/snow-white">Skin</a>
-        </li>
-        <li>
-          <a href="/pro-products">Nails</a>
-        </li>
-        <li>
-          <a href="/collections/accessories">Accesories</a>
-        </li>
+        <li><strong>SHOP</strong> <button type="button" onclick="closeMenuShop()">X</button> </li>
+        {% for link in linklists.main-mobile.links %}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </div>
-    <nav class="fixed-bottom hide-desktop mobile-bottom">
-      <ul id="menu">
+
+    <div id="discoverMenu" class="shop-menu hide-desktop">
+      <ul>
+        <li><strong>DISCOVER</strong> <button type="button" onclick="closeDiscoveryMenu()">X</button> </li>
+        {% for link in linklists.main-discover.links %}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <nav class="fixed-bottom hide-desktop mobile-bottom" id="showMenuShop">
+
+      <ul>
         <li>
           <a href="/"><?xml version="1.0" encoding="utf-8"?>
             <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
@@ -324,7 +305,7 @@
           <span>Home</span>
         </li>
         <li>
-          <a onclick="openMenuShop()" href="#">
+          <a href="#" onclick="openMenuShop()">
             <?xml version="1.0" encoding="utf-8"?>
             <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
             <g id="Shopicon">
@@ -337,7 +318,7 @@
           <span class="text-span-bottom">Shop</span>
         </li>
         <li>
-          <a href="#swym-wishlist" class="swym-wishlist">
+          <a onclick="openDiscoveryMenu()" href="#">
             <?xml version="1.0" encoding="utf-8"?>
             <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
               <g id="Shopicon">
@@ -364,7 +345,7 @@
           <span class="text-span-bottom">Me</span>
         </li>
         <li>
-          <a href="/blogs/blog">
+          <a href="/blogs/blog/join-the-disney-ultimate-princess-celebration-with-besames-exclusive-makeup-sets">
             <?xml version="1.0" encoding="utf-8"?>
             <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
             <g id="Shopicon">
@@ -377,9 +358,9 @@
         <span class="text-span-bottom">Blogs</span>
         </li>
         <li>
-        <a href="/blogs/blog">
+        <a href="#" onclick="openChatBoot()">
           <?xml version="1.0" encoding="utf-8"?>
-          <svg xmlns="http://www.w3.org/2000/svg"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
+          <svg xmlns="http://www.w3.org/2000/svg" class="animate__animated animate__shakeX"  height="25" viewBox="0 0 48 48" width="25"><path d="M0 0h48v48H0z" fill="none"/>
             <g id="Shopicon">
               <path d="M40,36c2.2,0,4-1.8,4-4V8c0-2.2-1.8-4-4-4L8,4C5.8,4,4,5.8,4,8v36l8-8L40,36z M6,39.172V8c0-1.103,0.897-2,2-2l32,0
                 c1.103,0,2,0.897,2,2v24c0,1.103-0.897,2-2,2l-28.828,0L6,39.172z"/>
@@ -972,6 +953,46 @@
       },
       "default": "#ffffff"
     }
-  ]
+  ],
+"blocks": [
+{
+  "type": "logo_image",
+  "name": "Mega logo",
+  "settings": [
+      {
+      "type": "checkbox",
+      "id": "menu_enable",
+      "label": "Enable this section",
+      "default": true
+      },
+      {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+      },
+      {
+      "type": "text",
+      "id": "mega_link",
+      "label": "Select menu",
+      "default": "1"
+      },
+      {
+      "type": "url",
+      "id": "link",
+      "label": "Main Link"
+      },
+      {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+      },
+      {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sub title"
+      }
+    ]
+  }
+  ] 
 }
 {% endschema %}

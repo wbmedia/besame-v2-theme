@@ -43,26 +43,16 @@
     >&times;</a
   >
   {% section 'cart-template-slider' %}
+  
 </div>
 
 <script>
   function openCart() {
-    document.getElementById("cartDrawer").style.width = "33.3%";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    document.getElementById("cartDrawer").style.display = "block";
   }
 
   function closeCart() {
-    document.getElementById("cartDrawer").style.width = "0";
-    document.body.style.backgroundColor = "white";
+    document.getElementById("cartDrawer").style.display = "none";
   }
 
-  if (
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    )
-  ) {
-    function openCart() {
-      document.getElementById("cartDrawer").style.width = "100%";
-    }
-  }
 </script>

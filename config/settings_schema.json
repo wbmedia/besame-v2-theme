@@ -8,6 +8,18 @@
     "theme_support_url": "https://support.shopify.com/"
   },
   {
+    "name": "Cart Drawer",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_cart_drawer",
+        "label": "Show Cart Drawer",
+        "default": true
+      }
+      
+    ]
+  },
+  {
     "name": {
       "cs": "Barvy",
       "da": "Farver",
