@@ -651,8 +651,6 @@
 }
 
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/vue@3.0.5"></script>
     <script>
       window.performance.mark("debut:theme_stylesheet_loaded.start");
 
@@ -769,8 +767,10 @@
     </script>
     {{ 'custom.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}" defer="async"></script> 
+    <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     {{ content_for_header }}
 
   </head>
@@ -779,10 +779,16 @@
     <div id="blur" class="content">
       <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ "general.accessibility.skip_to_content" | t }}</a>
 
-    {%- if settings.enable_ajax -%} {% render 'cart-popup' %} {%- endif -%} {%
-    section 'header' %}
+    {%- if settings.enable_ajax -%} 
+    {% render 'cart-popup' %} 
+    {%- endif -%} 
+    
+    {%section 'header' %}
     {% section 'popup' %}
-    {% render "cart-drawer" %}
+    
+    {%- if page.request_type != 'cart' and settings.show_cart_drawer -%}
+      {% render 'cart-drawer' %}
+    {%- endif -%}
 
     <div class="page-container drawer-page-content" id="PageContainer">
       <main

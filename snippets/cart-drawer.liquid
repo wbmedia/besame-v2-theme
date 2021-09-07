@@ -48,20 +48,11 @@
 
 <script>
   function openCart() {
-    document.getElementById("cartDrawer").style.width = "50%";
+    document.getElementById("cartDrawer").style.display = "block";
   }
 
   function closeCart() {
-    document.getElementById("cartDrawer").style.width = "0";
+    document.getElementById("cartDrawer").style.display = "none";
   }
 
-  if (
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    )
-  ) {
-    function openCart() {
-      document.getElementById("cartDrawer").style.width = "100%";
-    }
-  }
 </script>
